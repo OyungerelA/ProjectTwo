@@ -16,4 +16,13 @@ window.addEventListener('load', () => {
 
         window.location = '/board.html';
     })
+
+    let helpInfo = document.getElementById('help-text');
+    helpInfo.addEventListener('mouseover', () => {
+        document.getElementById('instructions').style.display = 'block';
+    })
+
+    helpInfo.addEventListener('mouseleave', () => {
+        document.getElementById('instructions').style.display = 'none';
+    })
 })

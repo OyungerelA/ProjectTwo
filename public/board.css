@@ -144,9 +144,9 @@ button{
 
 .closeInput-btn-img{
     position: absolute;
-    top: 38vh;
-    left: 74.8vw;
-    width: 10px;
+    top: 37.7vh;
+    left: 75.8vw;
+    width: 13px;
     height: auto;
     cursor: pointer;
     background: none;
@@ -159,13 +159,14 @@ button{
     width: 40vw;
     height: 20vh;
     border: 3px solid lightskyblue;
+    padding: 10px;
     /* display: none; */
 }
 
 .submit-btn{
     position: absolute;
     border: 1px solid black;
-    top: 61vh;
+    top: 63.5vh;
     left: 53vw;
     width: 80px;
     height: 28px;
@@ -221,4 +222,15 @@ button{
     /* overflow-y: hidden;
     overflow-x: scroll;
     white-space: nowrap; */
+}
+
+.block-area{
+    position: absolute;
+    top: 10vh;
+    /* left: 8vw; */
+    width: 100vw;
+    height: 90vh;
+    background-color: white;
+    opacity: 0.1;
+    display: none;
 }

@@ -3,7 +3,7 @@
     /* font-family: 'Poppins', sans-serif; */
     font-family: 'Quicksand', sans-serif;
     font-weight: 500;
-    background-color: azure;
+    background-color: lightcyan;
 }
 
 input{
@@ -55,13 +55,13 @@ input{
     justify-content: center;
     height: 90vh;
     width: 100vw;
-    background-color: azure;
+    background-color: lightcyan;
 }
 
 #join-form{
     background-color: lightskyblue;
     padding: 70px;
-    border-radius: 5px;
+    border-radius: 15px;
     margin-top: 10vh;
 }
 
@@ -103,3 +103,23 @@ input{
     cursor: pointer;
 }
 
+.instructions{
+    background-color: #FFDA8F;
+    position: absolute;
+    width: 15vw;
+    height: 47vh;
+    top: 40vh;
+    left: 80vw;
+    text-align: center;
+    border-radius: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: none;
+}
+
+.instructions p{
+    background-color: #FFDA8F;
+    font-size: 14px;
+    font-style: italic;
+    border-radius: 15px;
+}

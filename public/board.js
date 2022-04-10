@@ -175,9 +175,9 @@ function addNote(color, value){
     removeIcon.style.width = '12px';
     removeIcon.style.height = '12px';
     removeIcon.style.position = 'absolute';
-    removeIcon.style.top = '4px';
-    removeIcon.style.right = '4px';
-    removeIcon.style.padding = '3px'
+    removeIcon.style.top = '1px';
+    removeIcon.style.right = '1px';
+    removeIcon.style.padding = '4px'
     removeIcon.style.background = 'none';
 
     noteWrapper.appendChild(removeIcon);
@@ -249,8 +249,6 @@ function removeElement(id){
     return elem.parentNode.removeChild(elem);    
 }
 
-
-
 window.addEventListener('load', () => {
     // add interactivity to back button - when clicked, go back to the landing page 
     // LATER ADD - when sent back, the input fields should not be cleared, set the value back to how it was before
@@ -287,14 +285,16 @@ window.addEventListener('load', () => {
 
         else if (e.target.classList.contains('noteBox')){
             document.getElementById('input-area').style.display = 'block';
-            document.getElementById('main').style.opacity = '0.3';
+            document.getElementById('main').style.opacity = '0.5';
+            document.getElementById('block-area').style.display = 'block';
             currNote = e.target.id;
             flag = false;
         }
 
         else if (e.target.classList.contains('text')){
             document.getElementById('input-area').style.display='block';
-            document.getElementById('main').style.opacity = '0.3';
+            document.getElementById('main').style.opacity = '0.5';
+            document.getElementById('block-area').style.display = 'block';
             // let id = e.target.id;
             // currNote = id.substr(id.length - 1);
             currNote = e.target.id;
@@ -304,7 +304,7 @@ window.addEventListener('load', () => {
 
         else if (e.target.classList.contains('text-wrapper')){
             document.getElementById('input-area').style.display='block';
-            document.getElementById('main').style.opacity = '0.3';
+            document.getElementById('main').style.opacity = '0.5';
             // let id = e.target.lastChild.id;
             // currNote = id.substr(id.length - 1);
             currNote = e.target.lastChild.id;
@@ -324,6 +324,8 @@ window.addEventListener('load', () => {
     closeInputBtn.addEventListener('click', () => {
         document.getElementById('input-area').style.display = 'none';
         document.getElementById('main').style.opacity = '1';
+        document.getElementById('block-area').style.display = 'none';
+
     })
 
     // adding interactivity to submit button in input area
@@ -347,6 +349,8 @@ window.addEventListener('load', () => {
         socket.emit('noteTextSubmitted', noteDetails);
 
         document.getElementById('input-box').value = '';
+        document.getElementById('block-area').style.display = 'none';
+
 
     })
 })
