@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="board.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Poppins:wght@300&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Stick It!</title>
+</head>
+<body>
+    <div class="top-bar">
+        <button class="back-btn" id="back-btn">
+            <img src="images/left-arrow.png" alt="back button img" class="back-btn-img">
+        </button>
+        <div class="board-name" id="board-name">
+            <p class="defaultText">Room: </p>
+        </div>
+        <div class="member-count" id="member-count">
+            <p class="defaultText">Members: </p>
+        </div>
+    </div>
+    <!-- <div class="user-info-container" id="user-info-container"> -->
+        <!-- <p>oyungerel</p>
+        <p>itgel</p>
+        <p>ariya</p>
+        <p>bum</p>
+        <p>tugsu</p>
+        <p>bla</p>
+        <p>blabla</p> -->
+    <!-- </div> -->
+    <div class="main-area" id="main">
+        <div class="side-bar">
+            <button class="addNote-btn" id="addNote-btn">
+                <img src="images/plus.png" alt="plus icon img" class="addNote-btn-img">
+            </button>
+            <!-- <div class='"drop-down-menu'>
+                <button class="drop-down-btn"></button>
+                <div class="drop-down-content">
+                    <a href="#"><img src="images/1.png" width="20" height="auto" alt="">Yellow</a>
+                    <a href="#"><img src="images/2.png" width="20" height="auto" alt="">Orange</a>
+                    <a href="#"><img src="images/3.png" width="20" height="auto" alt="">Pink</a>
+                    <a href="#"><img src="images/4.png" width="20" height="auto" alt="">Purple</a>
+                    <a href="#"><img src="images/5.png" width="20" height="auto" alt="">Blue</a>
+                    <a href="#"><img src="images/6.png" width="20" height="auto" alt="">Green</a>
+                    <a href="#"><img src="images/7.png" width="20" height="auto" alt="">Neutral</a>
+                </div>
+            </div> -->
+
+            <select name="colors" id="color-select" class="color-select" onchange="getColor()">
+                <option value="1" data-thumbnail="images/1.png">Yellow</option>
+                <option value="2" data-thumbnail="images/1.png">Orange</option>
+                <option value="3" data-thumbnail="images/1.png">Pink</option>
+                <option value="4" data-thumbnail="images/1.png">Purple</option>
+                <option value="5" data-thumbnail="images/1.png">Blue</option>
+                <option value="6" data-thumbnail="images/1.png">Green</option>
+                <option value="7" data-thumbnail="images/1.png">Neutral</option>
+            </select>
+        </div>
+        <div class="board-area" id="board-area"></div>
+    </div>
+    <div class="input-area" id="input-area">
+        <!-- <input type="text" class="input-box" id="input-box" placeholder="Enter your text here:"> -->
+        <!-- <button class="closeInput-btn" id="closeInput-btn"> -->
+        <img src="images/cancel.png" class="closeInput-btn-img" id="closeInput-btn-img" alt="close text area button">
+        <!-- </button> -->
+
+        <textarea name="text" class="input-box" id="input-box" rows="14" cols="10" wrap="soft" placeholder="Type your note here:" autocomplete="off"></textarea>
+        <button class="submit-btn" id="submit-btn">Enter</button>
+    </div>
+    <!-- good to add turn off sound option somewhere on the screen -->
+    <audio id="audio" src="audio/paper_crumple.mp3"></audio>
+</body>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script src='board.js'></script>
+</html>
+
+<!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias rerum cumque voluptas odio necessitatibus! Odio similique incidunt tempora placeat facilis obcaecati, debitis enim ex quisquam numquam. Rerum laborum architecto commodi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam facere qui voluptatibus eius tempore quasi error quibusdam doloremque voluptas, recusandae culpa, consequatur corporis vero quia vel repellendus perspiciatis suscipit distinctio. -->

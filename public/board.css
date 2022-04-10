@@ -1,0 +1,224 @@
+*{
+    background-color: azure;
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+}
+
+button{
+    border: none;
+}
+
+.top-bar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: lightskyblue;
+    height: 10vh;
+}
+
+.top-bar *{
+    background-color: lightskyblue;
+}
+
+.back-btn{
+    margin-left: 2rem;
+    cursor: pointer;
+}
+
+.back-btn-img{
+    max-height: 2rem;
+}
+
+.board-name{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.member-count{
+    margin-right: 2.5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.defaultText{
+    padding-left: 10px;
+    font-weight: 700;
+}
+
+.user-info-container{
+    margin-top: 0;
+    margin-left: 85vw;
+    overflow-y: scroll;
+    width: 15vw;
+    height: 9vh;
+}
+
+.user-info-container *{
+    background-color: rosybrown;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    word-break: break-all;
+}
+
+.main-area{
+    display: flex;
+    flex-direction: row;
+}
+
+.side-bar{
+    display: flex;
+    flex-direction: column;
+    background-color: lightslategrey;
+    left: 0;
+    align-items: center;
+    width: 8vw;
+    height: 90vh;
+}
+
+.side-bar *{
+    background-color: lightslategrey;
+}
+
+.addNote-btn{
+    margin-top: 15rem;
+}
+
+.addNote-btn-img{
+    max-height: 2rem;
+    cursor: pointer;
+}
+
+.color-select{
+    margin-top: 5rem;
+    cursor: pointer;
+    background-color: white;
+}
+
+.board-area{
+    background-color: lightcyan;
+    top: 10vh;
+    left: 8vw;
+    width: 92vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    justify-content: space-evenly;
+}
+
+.board-area *{
+    background-color: lightcyan;
+}
+
+.board-area img{
+    width: 15rem;
+    height: auto;
+    margin: 1rem;
+    margin-top: 2rem;
+    cursor: pointer;
+    /* margin: 4rem; */
+}
+
+.note-box-wrapper{
+    position: relative;
+    height: fit-content;
+    /* overflow-y: scroll; */
+}
+
+.noteBox{
+    position: sticky;
+    /* cursor: pointer; */
+}
+
+.input-area{
+    display: none;
+}
+
+.closeInput-btn-img{
+    position: absolute;
+    top: 38vh;
+    left: 74.8vw;
+    width: 10px;
+    height: auto;
+    cursor: pointer;
+    background: none;
+}
+
+.input-box{
+    position: absolute;
+    top: 40vh;
+    left: 35vw;
+    width: 40vw;
+    height: 20vh;
+    border: 3px solid lightskyblue;
+    /* display: none; */
+}
+
+.submit-btn{
+    position: absolute;
+    border: 1px solid black;
+    top: 61vh;
+    left: 53vw;
+    width: 80px;
+    height: 28px;
+    cursor: pointer;
+}
+
+#audio{
+    display: none;
+}
+
+.text-wrapper{
+    position: absolute;
+    /* width: 150px;
+    height: 50px; */
+    top: 45px;
+    left: 20px;
+    background: none;
+    height: 11rem;
+    width: 13.5rem;
+    overflow-y: scroll;
+    margin-left: 7px;
+    margin-top: 5px;
+    cursor: pointer;
+    white-space: pre-wrap;   
+}
+
+.text-wrapper p{
+    background: none;
+}
+
+.user-wrapper{
+    position: absolute;
+    /* margin-left: 7px;
+    margin-top: 35px; */
+    top: 242px;
+    left: 27px;
+    height: 2rem;
+    width: 13.6rem;
+    background: none;
+    /* top: 11rem; */
+    display: flex;
+    flex-direction: row;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.user-wrapper p{
+    background: none;
+    font-size: smaller;
+    font-style: italic;
+    color: gray;
+    /* overflow-y: hidden;
+    overflow-x: scroll;
+    white-space: nowrap; */
+}
