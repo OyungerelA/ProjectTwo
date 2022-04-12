@@ -135,7 +135,7 @@ socket.on('noteTextDetails', (data) => {
 
 
 function addNote(color, value){
-    document.getElementById('input-box').value = '';
+    // document.getElementById('input-box').value = '';
 
     let noteWrapper = document.createElement('div');
     noteWrapper.classList.add('note-box-wrapper');
