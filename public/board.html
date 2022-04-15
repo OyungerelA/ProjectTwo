@@ -12,6 +12,7 @@
     <title>Stick It!</title>
 </head>
 <body>
+    <!-- top bar containing go-back button, room name and # of users in the room -->
     <div class="top-bar">
         <button class="back-btn" id="back-btn">
             <img src="images/left-arrow.png" alt="back button img" class="back-btn-img">
@@ -23,33 +24,15 @@
             <p class="defaultText">Members: </p>
         </div>
     </div>
-    <!-- <div class="user-info-container" id="user-info-container"> -->
-        <!-- <p>oyungerel</p>
-        <p>itgel</p>
-        <p>ariya</p>
-        <p>bum</p>
-        <p>tugsu</p>
-        <p>bla</p>
-        <p>blabla</p> -->
-    <!-- </div> -->
+
+    <!-- main area containing the side bar and board area -->
     <div class="main-area" id="main">
+        <!-- side bar containing add-note button and color-select option  -->
         <div class="side-bar">
             <button class="addNote-btn" id="addNote-btn">
                 <img src="images/plus.png" alt="plus icon img" class="addNote-btn-img">
             </button>
-            <!-- <div class='"drop-down-menu'>
-                <button class="drop-down-btn"></button>
-                <div class="drop-down-content">
-                    <a href="#"><img src="images/1.png" width="20" height="auto" alt="">Yellow</a>
-                    <a href="#"><img src="images/2.png" width="20" height="auto" alt="">Orange</a>
-                    <a href="#"><img src="images/3.png" width="20" height="auto" alt="">Pink</a>
-                    <a href="#"><img src="images/4.png" width="20" height="auto" alt="">Purple</a>
-                    <a href="#"><img src="images/5.png" width="20" height="auto" alt="">Blue</a>
-                    <a href="#"><img src="images/6.png" width="20" height="auto" alt="">Green</a>
-                    <a href="#"><img src="images/7.png" width="20" height="auto" alt="">Neutral</a>
-                </div>
-            </div> -->
-
+            <!-- tried adding the pic of the color in the data-thumbnail and attempted other ways, did not figure out how to add image inside each select option -->
             <select name="colors" id="color-select" class="color-select" onchange="getColor()">
                 <option value="1" data-thumbnail="images/1.png">Yellow</option>
                 <option value="2" data-thumbnail="images/1.png">Orange</option>
@@ -60,23 +43,23 @@
                 <option value="7" data-thumbnail="images/1.png">Neutral</option>
             </select>
         </div>
+        <!-- board area where the sticky notes and text will be displayed -->
         <div class="board-area" id="board-area"></div>
     </div>
-    <div class="block-area" id="block-area"></div>
-    <div class="input-area" id="input-area">
-        <!-- <input type="text" class="input-box" id="input-box" placeholder="Enter your text here:"> -->
-        <!-- <button class="closeInput-btn" id="closeInput-btn"> -->
-        <img src="images/cancel.png" class="closeInput-btn-img" id="closeInput-btn-img" alt="close text area button">
-        <!-- </button> -->
 
+    <!-- block area that will be used to the make the rest of the background unclickable while the user inputs text in the input area -->
+    <div class="block-area" id="block-area"></div>
+
+    <!-- input area where the user can type in their notes on 'textarea' and submit to have it displayed on the sticky note -->
+    <div class="input-area" id="input-area">
+        <img src="images/cancel.png" class="closeInput-btn-img" id="closeInput-btn-img" alt="close text area button">
         <textarea name="text" class="input-box" id="input-box" rows="14" cols="10" wrap="soft" placeholder="Type your note here:" autocomplete="off"></textarea>
         <button class="submit-btn" id="submit-btn">Enter</button>
     </div>
-    <!-- good to add turn off sound option somewhere on the screen -->
+
+    <!-- sound effect of crumpling paper that will be played for all users whenever a sticky note gets deleted -->
     <audio id="audio" src="audio/paper_crumple.mp3"></audio>
 </body>
 <script type="text/javascript" src="/socket.io/socket.io.js"></script>
 <script src='board.js'></script>
 </html>
-
-<!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias rerum cumque voluptas odio necessitatibus! Odio similique incidunt tempora placeat facilis obcaecati, debitis enim ex quisquam numquam. Rerum laborum architecto commodi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam facere qui voluptatibus eius tempore quasi error quibusdam doloremque voluptas, recusandae culpa, consequatur corporis vero quia vel repellendus perspiciatis suscipit distinctio. -->

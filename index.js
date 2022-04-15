@@ -24,13 +24,16 @@ let count = 0;
 io.sockets.on('connect', (socket) => {
     console.log('socket joined: ', socket.id);
 
+    // upon receiving userData from the user that is containing user name and socket id
     socket.on('userData', (data) => {
-        socket.name = data.name;
-        users[socket.name] = socket.id;
-        console.log(users);
-
         socket.room = data.room;
+        socket.name = data.name;
+        // add the user to the user object
+        users[socket.name] = socket.id;
 
+        console.log(users); 
+
+        // have the socket join the room it specified in the form
         socket.join(socket.room);
         if (rooms[socket.room]){
             rooms[socket.room]++;
@@ -42,69 +45,64 @@ io.sockets.on('connect', (socket) => {
         console.log(rooms);
 
         // let roomData = {
-        //     'roomName': socket.room,
-        //     'roomSize': rooms[socket.room]
-        // };
+        //     'users': Object.keys(users),
+        //     'size': rooms[socket.room]
+        // }
 
-        let roomData = {
-            'users': Object.keys(users),
-            'size': rooms[socket.room]
-        }
-
+        // emit room name to the specific socket
         socket.emit('roomName', socket.room);
+        // emit size of the room to all sockets in that room
         io.to(socket.room).emit('roomSize', rooms[socket.room]);
-
-        // io.to(socket.room).emit('userConnected', roomData);
-
-        // const clients = io.sockets.adapter.rooms.get(`${socket.room}`);
-        // io.to(socket.room).emit('userConnected', clients);
-
-        // console.log(clients);
-
-
-        // io.to(socket.room).emit('usersInRoom', roomData);
     })
 
+    // upon receiving notification that add-note button is clicked; data contains the color of the note added
     socket.on('addNoteClicked', (data) => {
         // console.log(data);
         count++;
+
+        // save the color in an object together with count value that will be used as identifier for each note
         let noteInfo = {
             color: data,
             value: count
         }
+        // emit the data to all sockets in the room
         io.to(socket.room).emit('noteColor', noteInfo);
     })
 
+    // upon receiving the id of the sticky note whose remove icon was clicked
     socket.on('removeIconClicked', (id) => {
         console.log('this will be removed: ' + id);
+        // emit the id to all sockets in the room to have the note deleted for all users
         io.to(socket.room).emit('removeIconClicked', id);
     })
 
+    // upon receiving the data of the text that was submitted for the note
     socket.on('noteTextSubmitted', (data) => {
         // console.log(data);
+        // emit the data to all sockets in the room to have the text displayed for all users
         io.to(socket.room).emit('noteTextDetails', data);
     })
 
+    // when a socket disconnects
     socket.on('disconnect', () => {
         console.log('socket disconnected: ', socket.id);
+        // decrement the size of the room
         rooms[socket.room]--;
+        // delete the socket from the user object
         delete users[socket.name];
 
-        let roomData = {
-            'users': Object.keys(users),
-            'size': rooms[socket.room]
-        }
+        // let roomData = {
+        //     'users': Object.keys(users),
+        //     'size': rooms[socket.room]
+        // }
 
+        // emit the updated room size to all sockets in the room
         io.to(socket.room).emit('roomSize', rooms[socket.room]);
-
-        // io.to(socket.room).emit('userDisconnected', roomData);
-
-        // io.to(socket.room).emit('usersInRoom', roomData);
     })
 })
 
-// running server
-let port = process.env.PORT || 5500;
+// running the server
+let port = process.env.PORT || 8000;
 server.listen(port, () => {
     console.log('server listening to port ' + port);
 })
