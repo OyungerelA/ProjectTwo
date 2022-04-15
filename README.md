@@ -146,6 +146,10 @@ Other small edits include increasing the clickable area of the remove buttons an
 ### Next Steps
 I absolutely enjoyed working on this project as it was an application that I saw myself using frequently. However, the project is nowhere near finishing and I want to add more features and functionalities to make it a fully complete application. The most important is including databases to store the previous information. For this app to be regularly used, users need to be able to save their notes without worrying that the notes they spent so much time adding will be deleted the moment they refresh or get disconnected from the internet. Moreover, the application right now is quite plain and too simple, so adding more features such as font selection, canvas for handwritten, illustrated notes could make the app more fun to use. All in all, I got so much more confident using sockets through this project and I'm quite proud of the outcome too!
 
+<img src="documentation/screenshot2.png" width="1000"/>
+<img src="documentation/screenshot3.png" width="1000"/>
+
+
 ### Credits
 [Sticky note image](https://www.flaticon.com/free-icon/sticky-notes_3209265?term=sticky%20note&page=1&position=4&page=1&position=4&related_id=3209265&origin=search) taken from flaticon
 
